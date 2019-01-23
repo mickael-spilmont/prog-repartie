@@ -16,8 +16,8 @@ public class ClientUDP {
 
 	void envoie() throws IOException {
 		DatagramPacket dgPacket = new DatagramPacket(new byte[0], 0);
-		dgPacket.setAddress(InetAddress.getByName("bouleau15"));
-		dgPacket.setPort(9870);
+		dgPacket.setAddress(InetAddress.getByName("hevea13"));
+		dgPacket.setPort(9876);
 				
 //		On envoie le message
 		dgSocket.send(dgPacket);
@@ -25,7 +25,13 @@ public class ClientUDP {
 		byte[] bufReception = new byte[50];
 		
 		dgPacket.setData(bufReception);
-		dgSocket.receive(p);
+		dgSocket.receive(dgPacket);
 		
+		String str = new String(dgPacket.getData(), dgPacket.getOffset(), dgPacket.getLength());
+		System.out.println(str);
+	}
+	
+	public static void main(String[] args) throws IOException {
+		new ClientUDP().envoie();
 	}
 }
