@@ -2,7 +2,7 @@
  * @author <a href="mailto:jean.carle@univ-lille1.fr">Jean Carle</a>, IUT-A, Universite de Lille 1
  * 
  */
-package serveur;
+package serveurUdp;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
