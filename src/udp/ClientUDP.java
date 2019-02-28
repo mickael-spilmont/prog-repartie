@@ -1,11 +1,9 @@
-package clientUdp;
+package udp;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
-import java.net.InetAddress;
 import java.net.InetSocketAddress;
-import java.util.Scanner;
 
 public class ClientUDP {
 	private DatagramSocket dgSocket;
@@ -24,7 +22,7 @@ public class ClientUDP {
 		dgPacket.setAddress(InetAddress.getByName("hevea13"));
 		dgPacket.setPort(9876);
 		*/
-		dgPacket.setSocketAddress(new InetSocketAddress("hevea13", 9876));
+		dgPacket.setSocketAddress(new InetSocketAddress("localhost", 9876));
 				
 //		On envoie le paquet (sans message)
 		dgSocket.send(dgPacket);
